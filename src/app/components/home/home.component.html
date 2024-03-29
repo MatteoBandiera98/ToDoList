@@ -1,0 +1,26 @@
+<h2>Hey Boss, what's my task for the day?</h2>
+<div>
+    <div>
+        <a type="button" class="btn btn-primary rounded-pill my-2"[routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a  class="btn btn-primary rounded-pill my-2" [routerLink]="['/completed']" routerLinkActive="active">Visualizza completati</a>
+        <a  class="btn btn-primary rounded-pill my-2" [routerLink]="['/uncompleted']" routerLinkActive="active">Visualizza incompleti</a>
+        <a  class="btn btn-primary rounded-pill my-2" [routerLink]="['/users']" routerLinkActive="active">Visualizza utenti</a>
+      </div>
+          
+  </div>
+<div *ngFor="let todo of todos" [ngStyle]="{ 'background-color': todo.completed ? '#c3ffb9' : '#ffb9b9' }">
+  <label>
+    <input type="checkbox" [checked]="todo.completed" (change)="toggleTodoCompletion(todo.id)">
+    <span>{{ todo.todo }}</span>
+  </label>
+  <p><strong>Asseganto a:</strong> {{ getUserById(todo.userId)?.firstName }}</p>
+</div>
+
+
+
+
+
+
+
+  
+  

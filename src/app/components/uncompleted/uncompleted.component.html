@@ -1,0 +1,15 @@
+<h2>Task Incomplete</h2>
+<div>
+    <a type="button" class="btn btn-primary rounded-pill my-2"[routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a  class="btn btn-primary rounded-pill my-2" [routerLink]="['/completed']" routerLinkActive="active">Visualizza completati</a>
+    <a  class="btn btn-primary rounded-pill my-2" [routerLink]="['/uncompleted']" routerLinkActive="active">Visualizza incompleti</a>
+    <a  class="btn btn-primary rounded-pill my-2" [routerLink]="['/users']" routerLinkActive="active">Visualizza utenti</a>
+  </div>
+  <div class="container mt-4">
+    <div *ngFor="let todo of uncompletedTodos" class="card mb-3" [style.background-color]="todo.completed ? 'inherit' : '#ffcccb'" [class.rounded]="true">
+      <div class="card-body">
+        <p class="card-text">{{ todo.todo }}</p>
+      </div>
+    </div>
+  </div>
+  

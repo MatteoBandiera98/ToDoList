@@ -1,0 +1,30 @@
+<h2>Utenti</h2>
+<div>
+  <a type="button" class="btn btn-primary rounded-pill my-2" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+  <a class="btn btn-primary rounded-pill my-2" [routerLink]="['/completed']" routerLinkActive="active">Visualizza completati</a>
+  <a class="btn btn-primary rounded-pill my-2" [routerLink]="['/uncompleted']" routerLinkActive="active">Visualizza incompleti</a>
+  <a class="btn btn-primary rounded-pill my-2" [routerLink]="['/users']" routerLinkActive="active">Visualizza utenti</a>
+</div>
+<div *ngFor="let user of users" class="user-card bg-dark text-white">
+  <img [src]="user.image" alt="User Image">
+  <div class="user-details">
+    <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+    <p>{{ user.title }}</p>
+    <p>Email: {{ user.email }}</p>
+    <ul>
+      <li *ngFor="let todo of user.todos" [ngStyle]="{ 'background-color': todo.completed ? '#c3ffb9' : '#ffb9b9' }">
+        {{ todo.todo }} ({{ todo.completed ? 'Completato' : 'Incompleto' }})
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+  
+  
+  
+    
+  
+  
