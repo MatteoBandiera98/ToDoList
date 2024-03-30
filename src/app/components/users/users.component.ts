@@ -9,7 +9,7 @@ import { Todo } from '../../models/todo';
   styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent implements OnInit {
-  users: any[] = [];
+  users: any[] = []; //dichiaro any in quanto se scrivo User si crea un malfunzionamento dell'applicazione
   todos: Todo[] = [];
 
   constructor(
